@@ -3,7 +3,7 @@ version: '3.7'
 services:
   postgres:
     container_name: postgres
-    image: docker-proxy.choco.kz/postgres:13.1-alpine
+    image: postgres:13.1-alpine
     environment:
       POSTGRES_DB: db
       POSTGRES_USER: user
@@ -13,7 +13,7 @@ services:
 
   rabbitmq:
     container_name: rabbitmq
-    image: docker-proxy.choco.kz/rabbitmq:3.8.9-alpine
+    image: rabbitmq:3.8.9-alpine
     environment:
       - RABBITMQ_DEFAULT_VHOST=vhost
       - RABBITMQ_DEFAULT_USER=user
@@ -48,7 +48,6 @@ services:
       mypy: mypy .
       flake8: flake8 .
       check: python manage.py check --deploy
-      shell: python manage.py shell_plus
 
   celery:
     container_name: celery

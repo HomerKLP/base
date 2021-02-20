@@ -3,5 +3,5 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CommonConfig(AppConfig):
-    name: str = 'common'
-    verbose_name: str = _('common')
+    name = 'common'
+    verbose_name = _('Common')

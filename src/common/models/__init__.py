@@ -1,5 +1,6 @@
 from typing import Tuple
 
-from .profile import Profile
+from .user import ExtendedUser
 
-__all__: Tuple = ('Profile',)
+__all__: Tuple = ('ExtendedUser',)
+

@@ -10,14 +10,3 @@ urlpatterns = i18n_patterns(
 urlpatterns += (
     path(route='silk/', view=include(arg='silk.urls')),
 )
-
-if DEBUG:
-    from debug_toolbar import urls
-    from django.conf.urls.static import static
-
-    urlpatterns += (
-        path(route='__debug__/', view=include(arg=urls)),
-    )
-    urlpatterns += tuple(
-        static(prefix=MEDIA_URL, document_root=MEDIA_ROOT)
-    )

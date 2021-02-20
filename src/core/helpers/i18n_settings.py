@@ -1,5 +1,5 @@
 from os.path import join, abspath, dirname
-from typing import Tuple, List
+from typing import Tuple
 
 from django.utils.translation import gettext_lazy as _
 
@@ -12,7 +12,7 @@ def locale_path_for_app(app: str) -> str:
     )
 
 
-DEFAULT_LOCALE_PATHS: List = [
+DEFAULT_LOCALE_PATHS = [
     locale_path_for_app(app=app) for app in PROJECT_APPS
 ]
 DEFAULT_LANGUAGES: Tuple = (

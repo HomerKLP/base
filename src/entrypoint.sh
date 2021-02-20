@@ -4,7 +4,7 @@ wait_for () {
     for _ in `seq 0 100`; do
         (echo > /dev/tcp/$1/$2) >/dev/null 2>&1
         if [[ $? -eq 0 ]]; then
-            echo "$1:$2 accepts connections!^_^"
+            echo "$1:$2 accepts connections!"
             break
         fi
         sleep 1
@@ -14,7 +14,7 @@ populate_env_variables () {
   set -o allexport
   [[ -f /src/core/.env ]] && source /src/core/.env
   set +o allexport
-  echo "env variables are populated!^_^"
+  echo "env variables are populated!"
 }
 populate_env_variables
 case "$PROCESS" in
@@ -58,7 +58,7 @@ case "$PROCESS" in
     --concurrency=12 --max-tasks-per-child=2048
     ;;
 *)
-    echo "NO PROCESS SPECIFIED!>_<"
+    echo "NO PROCESS SPECIFIED!"
     exit 1
     ;;
 esac

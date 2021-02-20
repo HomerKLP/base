@@ -1,6 +1,4 @@
-from typing import Tuple
-
-DJANGO_MIDDLEWARE: Tuple = (
+DJANGO_MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -10,10 +8,12 @@ DJANGO_MIDDLEWARE: Tuple = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-SIDE_MIDDLEWARE: Tuple = (
+
+SIDE_MIDDLEWARE = (
     'corsheaders.middleware.CorsMiddleware',
     'silk.middleware.SilkyMiddleware',
 )
-BEFORE: Tuple = DJANGO_MIDDLEWARE[:3]
-AFTER: Tuple = DJANGO_MIDDLEWARE[3:]
-DEFAULT_MIDDLEWARE: Tuple = BEFORE + SIDE_MIDDLEWARE + AFTER
+
+BEFORE = DJANGO_MIDDLEWARE[:3]
+AFTER = DJANGO_MIDDLEWARE[3:]
+DEFAULT_MIDDLEWARE = BEFORE + SIDE_MIDDLEWARE + AFTER

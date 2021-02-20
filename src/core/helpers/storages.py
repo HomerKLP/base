@@ -1,8 +1,5 @@
-from types import MappingProxyType
+DEFAULT_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
-DEFAULT_STORAGE: str = 'django.core.files.storage.FileSystemStorage'
-
-STORAGES: MappingProxyType = MappingProxyType(mapping={
+STORAGES = {
     'LOCAL': DEFAULT_STORAGE,
-    'AWS_S3': 'storages.backends.s3boto3.S3Boto3Storage',
-})
+}
