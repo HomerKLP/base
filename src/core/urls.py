@@ -10,3 +10,10 @@ urlpatterns = i18n_patterns(
 urlpatterns += (
     path(route='silk/', view=include(arg='silk.urls')),
 )
+
+if DEBUG:
+    from django.conf.urls.static import static
+
+    urlpatterns += tuple(
+        static(prefix=MEDIA_URL, document_root=MEDIA_ROOT)
+    )

@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 class EntityManager(models.Manager):
     def get_queryset(self):
-        return super().get_queryset().filter(
+        return super().get_queryset().filter(  # pragma: no cover
             is_deleted=False
         )
 
@@ -37,4 +37,3 @@ class Entity(models.Model):
 
     class Meta:
         abstract = True
-
