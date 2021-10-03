@@ -10,6 +10,5 @@ SIDE_APPS = (
 )
 
 PROJECT_APPS = ('common',)
-message = 'no more than 5 apps per django project'
-assert len(PROJECT_APPS) <= 5, message  # nosec
+
 DEFAULT_APPS = DJANGO_APPS + SIDE_APPS + PROJECT_APPS

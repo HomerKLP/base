@@ -25,7 +25,7 @@ class Entity(models.Model):
         auto_now=True, verbose_name=_('modified_at'),
     )
     is_deleted = models.BooleanField(
-        default=False, verbose_name=_('is_deleted'), db_index=True,
+        default=False, verbose_name=_('is_deleted'),
         editable=False,
     )
 
