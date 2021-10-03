@@ -1,5 +1,6 @@
-DJANGO_MIDDLEWARE = (
+DEFAULT_MIDDLEWARE = (
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -8,12 +9,3 @@ DJANGO_MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
-SIDE_MIDDLEWARE = (
-    'corsheaders.middleware.CorsMiddleware',
-    'silk.middleware.SilkyMiddleware',
-)
-
-BEFORE = DJANGO_MIDDLEWARE[:3]
-AFTER = DJANGO_MIDDLEWARE[3:]
-DEFAULT_MIDDLEWARE = BEFORE + SIDE_MIDDLEWARE + AFTER

@@ -1,6 +1,5 @@
 # TODO: always check for "python manage.py check --deploy"
 from os.path import dirname, abspath, join
-from typing import Callable, Any
 
 import sentry_sdk
 from corsheaders.defaults import default_methods, default_headers
@@ -85,13 +84,3 @@ CELERY_ENABLE_UTC = True
 CELERY_ACCEPT_CONTENT = ('application/json',)
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_ACKS_LATE = True
-
-# Silk
-SILKY_PYTHON_PROFILER = True
-SILKY_META = True
-SILKY_INTERCEPT_PERCENT = env.int(var='SILKY_INTERCEPT_PERCENT')
-SILKY_MAX_RECORDED_REQUESTS = 8192
-SILKY_AUTHENTICATION = True
-SILKY_AUTHORISATION = True
-SILKY_PERMISSIONS: Callable[[Any], Any] = lambda user: user.is_superuser
