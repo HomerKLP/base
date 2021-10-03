@@ -33,20 +33,6 @@ services:
       - 8000:8000
     environment:
       PROCESS: DEV_DJANGO
-      test: "pytest -v --cov . --cov-report term-missing
-      --cov-fail-under=100 --flake8 --mypy -n 4 --no-migrations
-      --reuse-db -W error
-      -W ignore::ResourceWarning"
-      makemigrations: python manage.py makemigrations
-      migrate: python manage.py migrate
-      makemessages: python manage.py makemessages
-      compilemessages: python manage.py compilemessages
-      outdated: pip list --outdated --format=columns
-      bandit: bandit -r . --exclude tests
-      safety: safety check
-      mypy: mypy .
-      flake8: flake8 .
-      check: python manage.py check --deploy
 
   celery:
     container_name: celery
