@@ -1,4 +1,4 @@
-FROM python:3.9.2-slim
+FROM python:3.9.7-slim
 
 ENV PYTHONUNBUFFERED=1 COLUMNS=200 \
     TZ=Asia/Almaty PIP_CONFIG_FILE=/src/pip.conf

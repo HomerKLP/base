@@ -1,3 +1,5 @@
+DEFAULT_STORAGE = "django.core.files.storage.FileSystemStorage"
+
 STORAGES = {
-    'LOCAL': 'django.core.files.storage.FileSystemStorage',
+    'LOCAL': DEFAULT_STORAGE,
 }

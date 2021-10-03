@@ -6,7 +6,7 @@ DJANGO_APPS = (
 
 SIDE_APPS = (
     'corsheaders', 'rest_framework', 'django_extensions',
-    'django_filters', 'django_fsm', 'silk', 'drf_yasg',
+    'django_filters', 'django_fsm', 'drf_yasg',
 )
 
 PROJECT_APPS = ('common',)

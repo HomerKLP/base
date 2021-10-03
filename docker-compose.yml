@@ -3,7 +3,7 @@ version: '3.7'
 services:
   postgres:
     container_name: postgres
-    image: postgres:13.1-alpine
+    image: postgres:13.4-alpine
     environment:
       POSTGRES_DB: db
       POSTGRES_USER: user
@@ -13,7 +13,7 @@ services:
 
   rabbitmq:
     container_name: rabbitmq
-    image: rabbitmq:3.8.9-alpine
+    image: rabbitmq:3.9.7-alpine
     environment:
       - RABBITMQ_DEFAULT_VHOST=vhost
       - RABBITMQ_DEFAULT_USER=user
