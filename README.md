@@ -1,14 +1,46 @@
-# Base Project for starting all Django projects
+# Base Project for starting Django projects
 
-## Development:
+### Local deploy:
 
-```shell
-$ docker-compose up
+```bash
+ $ docker-compose up -d
+ ```
+
+### Run tests:
+
+```bash
+$ docker-compose exec django bash
+$ inv test
+
+-- or --
+ 
+$ docker-compose exec django inv test
+
+
+-- to run certain test --
+
+$ inv test -t test_example
 ```
 
-## Testing:
+### Run linter:
 
-```shell
+```bash
 $ docker-compose exec django bash
-$ $test
+$ inv lint
+
+-- or --
+ 
+$ docker-compose exec django inv lint
+```
+
+### API Documentation by Redoc
+
+```
+http://localhost:8000/docs/
+```
+
+### Django admin
+
+```
+http://localhost:8000/admin/
 ```
