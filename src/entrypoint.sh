@@ -38,7 +38,6 @@ case "$PROCESS" in
     wait_for "${BROKER_HOST}" "${BROKER_PORT}"
     pytest -v --cov . --cov-report term-missing --cov-fail-under=100 \
     --color=yes -n 4 --no-migrations --reuse-db -W error \
-    -W ignore::django.utils.deprecation.RemovedInDjango40Warning \
     -W ignore::ResourceWarning
     ;;
 "DJANGO")

@@ -36,7 +36,6 @@ services:
       test: "pytest -v --cov . --cov-report term-missing
       --cov-fail-under=100 --flake8 --mypy -n 4 --no-migrations
       --reuse-db -W error
-      -W ignore::django.utils.deprecation.RemovedInDjango40Warning
       -W ignore::ResourceWarning"
       makemigrations: python manage.py makemigrations
       migrate: python manage.py migrate
