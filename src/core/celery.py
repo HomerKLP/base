@@ -4,13 +4,17 @@ from celery import Celery
 from celery.result import AsyncResult
 from kombu import Queue, Exchange
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
 
 class MyCelery(Celery):
     def remote_call(
-            self, task_name: str, routing_key: str, payload: dict,
-            exchange: str, exchange_type: str = "direct",
+        self,
+        task_name: str,
+        routing_key: str,
+        payload: dict,
+        exchange: str,
+        exchange_type: str = "direct",
     ) -> AsyncResult:
         exchange = Exchange(name=exchange, type=exchange_type)
         return self.send_task(
@@ -22,9 +26,10 @@ class MyCelery(Celery):
         )
 
 
-celery_app = MyCelery('core')
+celery_app = MyCelery("core")
 celery_app.config_from_object(
-    obj='django.conf:settings', namespace='CELERY',
+    obj="django.conf:settings",
+    namespace="CELERY",
 )
 celery_app.autodiscover_tasks()
 

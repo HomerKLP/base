@@ -5,7 +5,7 @@ from rest_framework import permissions
 schema_view = get_schema_view(
     openapi.Info(
         title="Base",
-        default_version='v1',
+        default_version="v1",
         description="Base Documentation",
     ),
     public=True,

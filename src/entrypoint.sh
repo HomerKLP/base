@@ -21,7 +21,7 @@ case "$PROCESS" in
 "LINT")
     wait_for "${DB_HOST}" "${DB_PORT}"
     python manage.py migrate \
-    && mypy . && flake8 . && bandit -r . --exclude tests && safety check
+    && black . --check && mypy . && flake8 . && bandit -r . --exclude tests && safety check
     ;;
 "DEV_DJANGO")
     wait_for "${DB_HOST}" "${DB_PORT}"

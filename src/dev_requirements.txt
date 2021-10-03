@@ -22,3 +22,5 @@ responses==0.14.0
 safety==1.10.3
 types-pytz==2021.1.0
 types-requests==2.25.1
+black==21.9b0
+invoke==1.6.0
