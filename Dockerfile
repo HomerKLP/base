@@ -1,15 +1,11 @@
 FROM python:3.9.7-slim
 
-ENV PYTHONUNBUFFERED=1 COLUMNS=200 \
-    TZ=Asia/Almaty PIP_CONFIG_FILE=/src/pip.conf
+ENV PYTHONUNBUFFERED=1 COLUMNS=200
 
 ADD ./src/requirements.txt \
     ./src/dev_requirements.txt /src/
 
-RUN apt update -y
-
-# User local alpine repositories
-RUN apt install -y gettext \
+RUN apt update -y && apt install -y gettext \
     && pip install --upgrade pip wheel setuptools \
     # Add project dependencies
     && pip install \
